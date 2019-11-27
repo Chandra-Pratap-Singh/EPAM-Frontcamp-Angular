@@ -1,0 +1,16 @@
+.header{
+    text-align: center;
+    padding:10px;
+    background-color: navy;
+    color:white;
+}
+.form-section{
+    border: 2px solid black;
+    padding:50px;
+    width: 50%;
+    margin:50px auto;
+    background-color: rgb(236, 234, 234);
+}
+button{
+    margin-left:30px;
+}

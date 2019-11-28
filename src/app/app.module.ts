@@ -16,6 +16,7 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 import { AddArticleSectionComponent } from "./add-article-section/add-article-section.component";
 import { FooterComponent } from "./footer/footer.component";
 import { HttpClientModule } from "@angular/common/http";
+import { LoginComponent } from "./login/login.component";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HttpClientModule } from "@angular/common/http";
     MainSectionComponent,
     PageNotFoundComponent,
     AddArticleSectionComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,17 @@
 <section class="row header-section-one">
-  <figure class="col-sm-8">
-    <img src="./assets/logo.jpg" alt="Logo" class="logo" />
-  </figure>
-  <div class="col-sm-4">
-    <div class="login-panel">
-      <span href="#" class="btn btn-outline-info">
-        <i class="fas fa-user-alt" style="font-size:22px"></i> User
-      </span>
-      <button id="logout" class="btn btn-outline-danger">Log Out</button>
+    <figure class="col-sm-8">
+        <img src="./assets/logo.jpg" alt="Logo" class="logo">
+    </figure>
+    <div class="col-sm-4">
+        <div class="login-panel">
+            <span href="#" class="btn btn-outline-secondary" *ngIf="user.loginAs=='admin'">
+                <i class='fas fa-user-cog' style='font-size:22px'></i> Admin Menu 
+            </span>
+            <span href="#" class="btn btn-outline-info" *ngIf="user.login">
+                <i class='fas fa-user-alt' style='font-size:22px'></i> {{user.id}} 
+            </span>
+            <button id="logout" class = "btn btn-outline-danger">Log Out</button>
+        </div>
     </div>
   </div>
 </section>

@@ -1,5 +1,6 @@
 .header-section-one {
   background-image: url("./assets/header-section-one-bg.jpg");
+  border-bottom: 2px solid navy;
 }
 .login-panel {
   float: right;

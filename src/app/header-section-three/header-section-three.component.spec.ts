@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { HeaderSectionThreeComponent } from './header-section-three.component';
+import { HeaderSectionThreeComponent } from "./header-section-three.component";
 
-describe('HeaderSectionThreeComponent', () => {
+describe("HeaderSectionThreeComponent", () => {
   let component: HeaderSectionThreeComponent;
   let fixture: ComponentFixture<HeaderSectionThreeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderSectionThreeComponent ]
-    })
-    .compileComponents();
+      declarations: [HeaderSectionThreeComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('HeaderSectionThreeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,47 +1,145 @@
 <section class="header">
-    <h3>Create News</h3>
+  <h3>Create News</h3>
 </section>
 
 <section class="form-section">
-    <form [formGroup]="registrationForm" class="row" ngSubmit="onSubmit()">
-        <div class="left-section col-lg-6">
-            <div class="form-group">
-                <label>Heading</label><br>
-                <input formControlName="heading" [class.is-invalid]="registrationForm.get('heading').touched && registrationForm.get('heading').invalid" class="form-control" type="text" id="heading" name="heading">
-                <small *ngIf="registrationForm.get('heading').touched && registrationForm.get('heading').invalid" class="text-danger" >Heading is required</small><br><br>
-            </div>
-            <div class="form-group">
-                <label>Short Description</label><br>
-                <input formControlName="shortDescription" [class.is-invalid]="registrationForm.get('shortDescription').touched && registrationForm.get('shortDescription').invalid" class="form-control" type="text" id="description" name="description">
-                <small *ngIf="registrationForm.get('shortDescription').touched && registrationForm.get('shortDescription').invalid" class="text-danger" >Description is required</small><br><br>
-            </div>
-            <div class="form-group">
-                <label>Content</label><br>
-                <textarea formControlName="content" [class.is-invalid]="registrationForm.get('content').touched && registrationForm.get('content').invalid" class="form-control"></textarea>
-                <small *ngIf="registrationForm.get('content').touched && registrationForm.get('content').invalid" class="text-danger" >Content is required</small>
-            </div>
-        </div>
-        <div class="right-section col-lg-6">
-                
-            <div class="form-group">
-                <label>Date</label><br>
-                <input formControlName="date" [class.is-invalid]="registrationForm.get('date').touched && registrationForm.get('date').invalid" class="form-control" type="date" id="date" name="date">
-                <small *ngIf="registrationForm.get('date').touched && registrationForm.get('date').invalid" class="text-danger" >Date is required</small><br><br>
-            </div>
-            <div class="form-group">
-                <label>Author</label><br>
-                <input formControlName="author" [class.is-invalid]="registrationForm.get('author').touched && registrationForm.get('author').invalid" class="form-control" type="text" id="author" name="author">
-                <small *ngIf="registrationForm.get('author').touched && registrationForm.get('author').invalid" class="text-danger" >Your name is required</small><br><br>
-            </div>
-            <div class="form-group">    
-                <label>Source URL</label><br>
-                <input formControlName="sourceUrl" [class.is-invalid]="registrationForm.get('sourceUrl').touched && registrationForm.get('sourceUrl').invalid" class="form-control" type="text" id="source-url" name="source-url">
-                <small *ngIf="registrationForm.get('sourceUrl').touched && registrationForm.get('sourceUrl').invalid" class="text-danger" >Source URL is required</small><br><br>
-            </div>
-            <div class="form-group">
-            <input class="btn btn-lg btn-success" type="submit" value="Save">
-            <button class="btn btn-lg btn-danger" (click)="reset()">Cancel</button>
-            </div>
-        </div>
-    </form>
+  <form [formGroup]="registrationForm" class="row" ngSubmit="onSubmit()">
+    <div class="left-section col-lg-6">
+      <div class="form-group">
+        <label>Heading</label><br />
+        <input
+          formControlName="heading"
+          [class.is-invalid]="
+            registrationForm.get('heading').touched &&
+            registrationForm.get('heading').invalid
+          "
+          class="form-control"
+          type="text"
+          id="heading"
+          name="heading"
+        />
+        <small
+          *ngIf="
+            registrationForm.get('heading').touched &&
+            registrationForm.get('heading').invalid
+          "
+          class="text-danger"
+          >Heading is required</small
+        ><br /><br />
+      </div>
+      <div class="form-group">
+        <label>Short Description</label><br />
+        <input
+          formControlName="shortDescription"
+          [class.is-invalid]="
+            registrationForm.get('shortDescription').touched &&
+            registrationForm.get('shortDescription').invalid
+          "
+          class="form-control"
+          type="text"
+          id="description"
+          name="description"
+        />
+        <small
+          *ngIf="
+            registrationForm.get('shortDescription').touched &&
+            registrationForm.get('shortDescription').invalid
+          "
+          class="text-danger"
+          >Description is required</small
+        ><br /><br />
+      </div>
+      <div class="form-group">
+        <label>Content</label><br />
+        <textarea
+          formControlName="content"
+          [class.is-invalid]="
+            registrationForm.get('content').touched &&
+            registrationForm.get('content').invalid
+          "
+          class="form-control"
+        ></textarea>
+        <small
+          *ngIf="
+            registrationForm.get('content').touched &&
+            registrationForm.get('content').invalid
+          "
+          class="text-danger"
+          >Content is required</small
+        >
+      </div>
+    </div>
+    <div class="right-section col-lg-6">
+      <div class="form-group">
+        <label>Date</label><br />
+        <input
+          formControlName="date"
+          [class.is-invalid]="
+            registrationForm.get('date').touched &&
+            registrationForm.get('date').invalid
+          "
+          class="form-control"
+          type="date"
+          id="date"
+          name="date"
+        />
+        <small
+          *ngIf="
+            registrationForm.get('date').touched &&
+            registrationForm.get('date').invalid
+          "
+          class="text-danger"
+          >Date is required</small
+        ><br /><br />
+      </div>
+      <div class="form-group">
+        <label>Author</label><br />
+        <input
+          formControlName="author"
+          [class.is-invalid]="
+            registrationForm.get('author').touched &&
+            registrationForm.get('author').invalid
+          "
+          class="form-control"
+          type="text"
+          id="author"
+          name="author"
+        />
+        <small
+          *ngIf="
+            registrationForm.get('author').touched &&
+            registrationForm.get('author').invalid
+          "
+          class="text-danger"
+          >Your name is required</small
+        ><br /><br />
+      </div>
+      <div class="form-group">
+        <label>Source URL</label><br />
+        <input
+          formControlName="sourceUrl"
+          [class.is-invalid]="
+            registrationForm.get('sourceUrl').touched &&
+            registrationForm.get('sourceUrl').invalid
+          "
+          class="form-control"
+          type="text"
+          id="source-url"
+          name="source-url"
+        />
+        <small
+          *ngIf="
+            registrationForm.get('sourceUrl').touched &&
+            registrationForm.get('sourceUrl').invalid
+          "
+          class="text-danger"
+          >Source URL is required</small
+        ><br /><br />
+      </div>
+      <div class="form-group">
+        <input class="btn btn-lg btn-success" type="submit" value="Save" />
+        <button class="btn btn-lg btn-danger" (click)="reset()">Cancel</button>
+      </div>
+    </div>
+  </form>
 </section>

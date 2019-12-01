@@ -1,26 +1,40 @@
 <div class="main-content" *ngIf="news.data.length">
-    <ng-container *ngFor="let newsfeed of news.data">
-        <div class="card newsfeed" *ngIf="get(newsfeed) && check_news_content(newsfeed.content)">
-            <article class="row article">
-                <figure class="col-md-4">
-                    <img src="{{newsfeed.urlToImage}}" class="thumb-nail" alt="thumbnail">
-                </figure>
-                <summary class="col-md-8">
-                    <h3>{{newsfeed.title}}</h3>
-                    <small>{{newsfeed.publishedAt}}</small>
-                    <br>
-                    <section class="news-text">
-                        <p #shortContent style="display:block"> {{newsfeed.content | slice:0:150}}... </p>
-                        <p #fullContent style="display:none">
-                            <app-full-news [fullNewsContent]="newsfeed.content"></app-full-news>
-                        </p>
-                    </section>
-                    <p>
-                        <button (click)="toggle_show_more_display(shortContent, fullContent, $event)">Read More</button>
-                        <button (click)="redirect_to_news_source(newsfeed)">Read Compelete Article</button>
-                    </p>
-                </summary>
-            </article>
-        </div>
-    </ng-container>
+  <ng-container *ngFor="let newsfeed of news.data">
+    <div
+      class="card newsfeed"
+      *ngIf="filter(newsfeed) && checkNewsContent(newsfeed.content)"
+    >
+      <article class="row article">
+        <figure class="col-md-4">
+          <img
+            src="{{ newsfeed.urlToImage }}"
+            class="thumb-nail"
+            alt="thumbnail"
+          />
+        </figure>
+        <summary class="col-md-8">
+          <h3>{{ newsfeed.title }}</h3>
+          <small>{{ newsfeed.publishedAt }}</small>
+          <br />
+          <section class="news-text">
+            <p #shortContent *ngIf="!readMore">
+              {{ newsfeed.content | slice: 0:150 }}...
+            </p>
+            <p #fullContent *ngIf="readMore">
+              {{ newsfeed.content }}
+            </p>
+          </section>
+          <p>
+            <button (click)="toggleShowMoreDisplay()">
+              <span *ngIf="!readMore">Read More</span
+              ><span *ngIf="readMore">Read Less</span>
+            </button>
+            <button (click)="redirectToNewsSource(newsfeed)">
+              Read Compelete Article
+            </button>
+          </p>
+        </summary>
+      </article>
+    </div>
+  </ng-container>
 </div>

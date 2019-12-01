@@ -1,16 +1,21 @@
-.header{
-    text-align: center;
-    padding:10px;
-    background-color: navy;
-    color:white;
+.header {
+  text-align: center;
+  padding: 10px;
+  background-color: navy;
+  color: white;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
-.form-section{
-    border: 2px solid black;
-    padding:50px;
-    width: 50%;
-    margin:50px auto;
-    background-color: rgb(236, 234, 234);
+.form-section {
+  border: 2px solid black;
+  padding: 50px;
+  width: 50%;
+  margin: 50px auto;
+  background-color: rgb(236, 234, 234);
+  margin-bottom: 100px;
 }
-button{
-    margin-left:30px;
+button {
+  margin-left: 30px;
 }

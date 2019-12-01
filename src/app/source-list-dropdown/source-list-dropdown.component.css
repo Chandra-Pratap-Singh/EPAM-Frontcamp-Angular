@@ -1,10 +1,9 @@
-#channel{
-    min-width: 200px;
+#channel {
+  min-width: 200px;
 }
 
-@media(max-width: 768px)
-{
-    #channel{
-        width: 100% !important;
-    }
+@media (max-width: 768px) {
+  #channel {
+    width: 100%;
+  }
 }

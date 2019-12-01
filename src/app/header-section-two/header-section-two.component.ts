@@ -1,19 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { ChannelService } from '../channel.service';
+import { Component, OnInit } from "@angular/core";
+import { ChannelService } from "../channel.service";
 
 @Component({
-  selector: 'app-header-section-two',
-  templateUrl: './header-section-two.component.html',
-  styleUrls: ['./header-section-two.component.css']
+  selector: "app-header-section-two",
+  templateUrl: "./header-section-two.component.html",
+  styleUrls: ["./header-section-two.component.css"]
 })
 export class HeaderSectionTwoComponent implements OnInit {
-
-  constructor(private _channel: ChannelService) { }
-
-  ngOnInit() {
+  activeChannel: string = "ALL";
+  constructor(private channelService: ChannelService) {
+    channelService.activeChannel.subscribe(value => {
+      this.activeChannel = value;
+    });
   }
-
-  //updating channel with service variable
-  channel=this._channel.channel;
-
+  ngOnInit() {}
 }

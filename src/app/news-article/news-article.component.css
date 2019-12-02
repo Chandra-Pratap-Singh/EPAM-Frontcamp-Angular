@@ -1,0 +1,37 @@
+.wrapper{
+    padding: 20px;
+}
+.go-back{
+    font-size: 30px;
+    cursor: pointer;
+    }
+.news-article{
+    width:80%;
+    margin:auto;
+    padding:50px;
+}
+#title{
+    text-align:center;
+}
+#article{
+    font-size: 20px;
+    text-align: justify;
+}
+#read-comments, #redirect-button{
+    background-color: navy;
+    color:white;
+    padding: 10px;
+}
+#redirect-button{
+    float:right;
+}
+#read-comments{ 
+    float:left;
+}
+
+@media(max-width:750px){
+    .news-article{
+        width:100%;
+        padding: 10px;
+    }
+}

@@ -1,5 +1,5 @@
 <div class="main-content" *ngIf="news.data.length">
-  <ng-container *ngFor="let newsfeed of news.data">
+  <ng-container *ngFor="let newsfeed of data">
     <div
       class="card newsfeed"
       *ngIf="filter(newsfeed) && checkNewsContent(newsfeed.content)"
@@ -25,7 +25,7 @@
             </p>
           </section>
           <p>
-            <button (click)="toggleShowMoreDisplay()">
+            <button (click)="toggleShowMoreDisplay(newsfeed)">
               <span *ngIf="!readMore">Read More</span
               ><span *ngIf="readMore">Read Less</span>
             </button>

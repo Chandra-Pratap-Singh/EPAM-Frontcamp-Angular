@@ -13,9 +13,16 @@ export class HeaderSectionOneComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userDetails.getUser();
+    this.userDetails.activeUser.subscribe(value => {
+      this.user = value;
+    });
   }
 
   logout() {
     this.userDetails.logout();
+  }
+
+  checkLoginStatus(): boolean {
+    return this.user.login;
   }
 }

@@ -6,9 +6,17 @@ import { AddArticleSectionComponent } from "./add-article-section/add-article-se
 import { LoginComponent } from "./login/login.component";
 import { LoginguardGuard } from "./loginguard.guard";
 import { AdminGuard } from "./admin.guard";
+import { NewsArticleComponent } from "./news-article/news-article.component";
+import { NewsArticleGuard } from "./news-article.guard";
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
+  // { path: '', component: CommentsComponent },
+  {
+    path: "news-article",
+    component: NewsArticleComponent,
+    canActivate: [NewsArticleGuard]
+  },
   {
     path: "news",
     component: MainSectionComponent,

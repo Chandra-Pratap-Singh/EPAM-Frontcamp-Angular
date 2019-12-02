@@ -8,11 +8,10 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginDetails={loginAs:"",id:"",password:""}
+  loginDetails={loginAs:"",id:"",password:"",login:true}
   constructor(private router: Router, private userDetails: UserService) { }
-  user;
   ngOnInit() {
-    this.user=this.userDetails.getUser();
+    this.userDetails.reset();
   }
 
   login(){
@@ -21,6 +20,8 @@ export class LoginComponent implements OnInit {
       this.userDetails.setUser(this.loginDetails);
       this.router.navigateByUrl('news');
     }
+    else
+      alert("incorrect-credentials");
   }
 
 }

@@ -19,6 +19,8 @@ import { LoginComponent } from "./login/login.component";
 import { NewsDetailsComponent } from "./news-details/news-details.component";
 import { LoginguardGuard } from "./loginguard.guard";
 import { AdminGuard } from "./admin.guard";
+import { NewsArticleComponent } from "./news-article/news-article.component";
+import { CommentsComponent } from "./comments/comments.component";
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { AdminGuard } from "./admin.guard";
     AddArticleSectionComponent,
     FooterComponent,
     LoginComponent,
-    NewsDetailsComponent
+    NewsDetailsComponent,
+    NewsArticleComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,

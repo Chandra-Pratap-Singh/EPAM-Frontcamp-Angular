@@ -1,0 +1,22 @@
+<div class="wrapper">
+    <i class="far fa-arrow-alt-circle-left icon go-back" (click)="goBack()"></i>
+    <div class="news-article">
+        <h3 id="title">
+            {{newsArticle.title}}
+        </h3>
+        <br>
+        <div class="text-center"><img id ="thumbnail" class="img-fluid mx-auto" src="{{newsArticle.urlToImage}}" alt="thumbnail"></div><br>
+        <section id="subtitle">{{newsArticle.author}} | {{newsArticle.publishedAt}}</section><br><br>
+        <article id="article">
+            {{newsArticle.content}}
+        </article>
+        <br><br>
+        <button id="read-comments" (click)="toggleComments()">
+            <span *ngIf="!readComments" >Show Comments</span>
+            <span *ngIf="readComments" >Hide Comments</span>
+        </button>
+        <button id="redirect-button" (click)="redirect(newsArticle.url)" >Go to the Source</button>
+        <div style="clear:both"></div>
+        <app-comments *ngIf="readComments"></app-comments>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<hr color="navy">
+<h3>Comments</h3>
+<div class="comment card" *ngFor="let comment of comments">
+    <section class="comment-content">
+        {{comment.content}}
+    </section>
+    <br><br>
+    <section class="comment-footer row">
+        <section class="footer-left-panel col-6">
+            <span><i class="fas fa-user-edit icon"></i>{{comment.author}}</span>
+             | 
+            <span><i class="fas fa-clock icon"></i>{{comment.date}}</span>
+        </section>
+        <br>
+        <section class="footer-right-panel col-6">
+            <span><i class="far fa-thumbs-up icon"></i>[{{comment.likes}}]</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span><i class="far fa-thumbs-down icon"></i>[{{comment.likes}}]</span>
+        </section>
+    </section>
+</div>

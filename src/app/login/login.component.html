@@ -13,11 +13,11 @@
                         <td>
                             <div class="custom-control custom-radio login-option" >
                                 <div class="admin-login">
-                          <input type="radio" class="custom-control-input" id="defaultUnchecked" name="login-as" value="admin" [(ngModel)]="loginDetails.loginAs">
+                          <input type="radio" class="custom-control-input" id="defaultUnchecked" name="login-as" value="admin" [(ngModel)]="loginDetails.loginAs" required>
                           <label class="custom-control-label" for="defaultUnchecked">Admin</label>
                                 </div>
                                 <div class="user-login">
-                          <input type="radio" class="custom-control-input" id="defaultChecked" name="login-as" value="user" checked [(ngModel)]="loginDetails.loginAs">
+                          <input type="radio" class="custom-control-input" id="defaultChecked" name="login-as" value="user" checked [(ngModel)]="loginDetails.loginAs" required>
                           <label class="custom-control-label" for="defaultChecked">User</label>    
                             </div>
                         </div>

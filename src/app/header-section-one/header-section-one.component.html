@@ -10,7 +10,7 @@
             <span href="#" class="btn btn-outline-info" *ngIf="user.login">
                 <i class='fas fa-user-alt' style='font-size:22px'></i> {{user.id}} 
             </span>
-            <button id="logout" class = "btn btn-outline-danger">Log Out</button>
+            <button id="logout" class = "btn btn-outline-danger" (click)="logout()">Log Out</button>
         </div>
     </div>
   </div>

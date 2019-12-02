@@ -29,6 +29,6 @@ export class AddArticleSectionComponent implements OnInit {
 
   reset() {
     this.registrationForm.reset();
-    this.router.navigateByUrl("");
+    this.router.navigateByUrl("news");
   }
 }

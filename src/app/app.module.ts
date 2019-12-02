@@ -9,6 +9,7 @@ import { HeaderSectionThreeComponent } from "./header-section-three/header-secti
 import { SourceListDropdownComponent } from "./source-list-dropdown/source-list-dropdown.component";
 import { FilterPanelComponent } from "./filter-panel/filter-panel.component";
 import { NewsSectionComponent } from "./news-section/news-section.component";
+import { AppRoutingModule } from "./app-routing.module";
 import { MainSectionComponent } from "./main-section/main-section.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { AddArticleSectionComponent } from "./add-article-section/add-article-section.component";
@@ -16,7 +17,8 @@ import { FooterComponent } from "./footer/footer.component";
 import { HttpClientModule } from "@angular/common/http";
 import { LoginComponent } from "./login/login.component";
 import { NewsDetailsComponent } from "./news-details/news-details.component";
-import { AppRoutingModule } from "./app-routing.module";
+import { LoginguardGuard } from "./loginguard.guard";
+import { AdminGuard } from "./admin.guard";
 
 @NgModule({
   declarations: [
@@ -41,6 +43,7 @@ import { AppRoutingModule } from "./app-routing.module";
     HttpClientModule,
     FormsModule
   ],
+  providers: [LoginguardGuard, AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

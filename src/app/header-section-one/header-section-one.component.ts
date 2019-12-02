@@ -14,4 +14,8 @@ export class HeaderSectionOneComponent implements OnInit {
   ngOnInit() {
     this.user = this.userDetails.getUser();
   }
+
+  logout() {
+    this.userDetails.logout();
+  }
 }

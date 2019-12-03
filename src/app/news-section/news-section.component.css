@@ -1,0 +1,30 @@
+.main-content {
+  width: 80%;
+  margin: auto;
+}
+.card {
+  min-height: 300px;
+}
+.article {
+  margin: 20px;
+  padding: 0px;
+  padding-bottom: 30px;
+}
+.newsfeed {
+  margin: 20px;
+}
+.newsfeed:hover {
+  box-shadow: 5px 10px 18px #888888;
+}
+.thumb-nail {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+.sub-title {
+  font-size: 14px;
+}
+.news-text {
+  font-size: 20px;
+  letter-spacing: 1px;
+}

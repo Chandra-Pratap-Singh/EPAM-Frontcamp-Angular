@@ -1,0 +1,13 @@
+<span>
+  <select
+    name="channel"
+    #select
+    (change)="updateNews($event, select.options[select.selectedIndex].text)"
+    id="channel"
+    class="custom-select mx-autos"
+  >
+    <option *ngFor="let channel of channelList" value="{{ channel.url }}">{{
+      channel.name
+    }}</option>
+  </select>
+</span>

@@ -8,7 +8,8 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginDetails={loginAs:"",id:"",password:"",login:true}
+  loginDetails={loginAs:"",id:"",password:"",login:true};
+  user:{loginAs:string, id:string, login:boolean};
   constructor(private router: Router, private userDetails: UserService) { }
   ngOnInit() {
     this.userDetails.reset();
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   login(){
     if(this.loginDetails.id=="0000" && this.loginDetails.password=="0000")
     {
-      this.userDetails.setUser(this.loginDetails);
+      this.user = {loginAs:this.loginDetails.loginAs, id:this.loginDetails.id, login:this.loginDetails.login};
+      this.userDetails.setUser(this.user);
       this.router.navigateByUrl('news');
     }
     else

@@ -21,6 +21,7 @@ import { LoginguardGuard } from "./loginguard.guard";
 import { AdminGuard } from "./admin.guard";
 import { NewsArticleComponent } from "./news-article/news-article.component";
 import { CommentsComponent } from "./comments/comments.component";
+import { StorageServiceModule } from "angular-webstorage-service";
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { CommentsComponent } from "./comments/comments.component";
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    StorageServiceModule
   ],
   providers: [LoginguardGuard, AdminGuard],
   bootstrap: [AppComponent]

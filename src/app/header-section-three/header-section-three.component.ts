@@ -8,12 +8,11 @@ import { UserService } from '../user.service';
 })
 export class HeaderSectionThreeComponent implements OnInit {
   constructor(private userService: UserService) {}
-  userDetails: {"loginAs":string ,"id":string ,"password":string ,"login":boolean};
+  user: {"loginAs":string ,"id":string,"login":boolean};
   ngOnInit() {
-    this.userDetails=this.userService.getUser();
+    this.user=this.userService.getUser();
   }
   checkAccess(){
-    this.userDetails=this.userService.getUser();
-    return this.userDetails.loginAs==="admin";
+    return this.userService.getLoginAs() ==="admin";
   }
 }

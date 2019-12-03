@@ -4,7 +4,7 @@
     </figure>
     <div class="col-sm-4">
         <div class="login-panel" *ngIf="checkLoginStatus()">
-            <span href="#" class="btn btn-outline-secondary" *ngIf="user.loginAs=='admin'">
+            <span href="#" class="btn btn-outline-secondary" *ngIf="checkLoginAsAdmin()">
                 <i class='fas fa-user-cog' style='font-size:22px'></i> Admin Menu 
             </span>
             <span href="#" class="btn btn-outline-info" *ngIf="user.login">

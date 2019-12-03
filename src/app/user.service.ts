@@ -1,15 +1,17 @@
-import { Injectable } from "@angular/core";
+import { Injectable, Inject } from "@angular/core";
 import { Router } from "@angular/router";
-import { Subject } from "rxjs";
+import { SESSION_STORAGE, WebStorageService } from "angular-webstorage-service";
 
 @Injectable({
   providedIn: "root"
 })
 export class UserService {
-  activeUser = new Subject<any>();
-  user = { loginAs: "", id: "", password: "", login: false };
+  constructor(
+    @Inject(SESSION_STORAGE) private storage: WebStorageService,
+    private router: Router
+  ) {}
 
-  constructor(private router: Router) {}
+  user = { loginAs: "", id: "", login: false };
 
   getUser() {
     return this.user;
@@ -18,23 +20,32 @@ export class UserService {
   setUser(value) {
     this.user.loginAs = value.loginAs;
     this.user.id = value.id;
-    this.user.password = value.password;
     this.user.login = value.login;
-    this.activeUser.next(this.user);
+    this.storage.set("user", this.user);
+  }
+
+  checkLocalStorage(): boolean {
+    return this.storage.get("user") != null;
   }
 
   getLoginStatus() {
-    return this.user.login;
+    return this.storage.get("user").login;
+  }
+
+  getLoginAs() {
+    return this.storage.get("user").loginAs;
+  }
+
+  getUserId() {
+    return this.storage.get("user").id;
   }
 
   reset() {
-    this.setUser({ loginAs: "", id: "", password: "", login: false });
-    this.activeUser.next(this.user);
+    this.setUser({ loginAs: "", id: "", login: false });
   }
 
   logout() {
     this.reset();
-    this.activeUser.next(this.user);
     this.router.navigateByUrl("");
   }
 }

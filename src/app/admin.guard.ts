@@ -6,9 +6,9 @@ import { UserService } from './user.service';
   providedIn: 'root'
 })
 export class AdminGuard implements CanActivate {
-  constructor(private userSevice: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router) {}
   canActivate(): boolean{
-    if(this.userSevice.user.loginAs==="admin")
+    if(this.userService.checkLocalStorage() && this.userService.getLoginAs() ==="admin")
       return true;
     else
     {

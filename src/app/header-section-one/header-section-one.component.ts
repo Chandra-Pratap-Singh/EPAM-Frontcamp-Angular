@@ -13,9 +13,6 @@ export class HeaderSectionOneComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userDetails.getUser();
-    this.userDetails.activeUser.subscribe(value => {
-      this.user = value;
-    });
   }
 
   logout() {
@@ -23,6 +20,15 @@ export class HeaderSectionOneComponent implements OnInit {
   }
 
   checkLoginStatus(): boolean {
-    return this.user.login;
+    return (
+      this.userDetails.checkLocalStorage() && this.userDetails.getLoginStatus()
+    );
+  }
+
+  checkLoginAsAdmin(): boolean {
+    return (
+      this.userDetails.checkLocalStorage() &&
+      this.userDetails.getLoginAs() === "admin"
+    );
   }
 }

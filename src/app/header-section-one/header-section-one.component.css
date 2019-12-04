@@ -7,4 +7,9 @@
 }
 .btn {
   margin: 10px;
+  margin-bottom: 0px;
+}
+div,figure{
+  margin: 0px;
+  padding: 0px;
 }

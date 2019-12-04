@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { UserService } from "../user.service";
+import { UserService, User } from "../user.service";
 
 @Component({
   selector: "app-login",
@@ -9,12 +9,13 @@ import { UserService } from "../user.service";
 })
 export class LoginComponent implements OnInit {
   loginDetails = { loginAs: "", id: "", password: "", login: true };
-  user: { loginAs: string; id: string; login: boolean };
+  // user: { loginAs: string; id: string; login: boolean };
+  user: User;
 
-  constructor(private router: Router, private userDetails: UserService) {}
+  constructor(private router: Router, private userService: UserService) {}
 
   ngOnInit() {
-    this.userDetails.reset();
+    this.userService.reset();
   }
 
   login() {
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit {
         id: this.loginDetails.id,
         login: this.loginDetails.login
       };
-      this.userDetails.setUser(this.user);
+      this.userService.setUser(this.user);
       this.router.navigateByUrl("news");
     } else alert("incorrect-credentials");
   }

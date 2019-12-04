@@ -1,15 +1,15 @@
-import { TestBed, async, inject } from '@angular/core/testing';
+import { TestBed, async, inject } from "@angular/core/testing";
 
-import { NewsArticleGuard } from './news-article.guard';
+import { NewsArticleGuard } from "./news-article.guard";
 
-describe('NewsArticleGuard', () => {
+describe("NewsArticleGuard", () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [NewsArticleGuard]
     });
   });
 
-  it('should ...', inject([NewsArticleGuard], (guard: NewsArticleGuard) => {
+  it("should ...", inject([NewsArticleGuard], (guard: NewsArticleGuard) => {
     expect(guard).toBeTruthy();
   }));
 });

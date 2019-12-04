@@ -10,7 +10,6 @@ export class NewsArticleGuard implements CanActivate {
   canActivate(): boolean{
     if(this.newsService.newsArticle) return true;
     else {
-      // console.log(this.newsService.newsArticle);
       this.router.navigateByUrl('news');
       return false;
     }

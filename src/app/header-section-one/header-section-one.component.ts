@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { UserService } from "../user.service";
+import { UserService, User } from "../user.service";
 
 @Component({
   selector: "app-header-section-one",
@@ -7,28 +7,31 @@ import { UserService } from "../user.service";
   styleUrls: ["./header-section-one.component.css"]
 })
 export class HeaderSectionOneComponent implements OnInit {
-  user: any;
+  storage = window.sessionStorage;
+  user: User;
+  isAdmin: boolean;
+  logedIn: boolean;
 
-  constructor(private userDetails: UserService) {}
+  constructor(private userService: UserService) {
+    this.userService.updatedUser.subscribe(value => {
+      this.user = JSON.parse(this.storage.getItem("user"));
+      this.isAdmin = this.user.loginAs === "admin";
+      this.logedIn = this.user.login;
+      console.log(this.user);
+    });
+  }
 
   ngOnInit() {
-    this.user = this.userDetails.getUser();
+    this.user = this.storage.getItem("user")
+      ? JSON.parse(this.storage.getItem("user"))
+      : { loginAs: "", id: "", login: false };
+    this.isAdmin = this.storage.getItem("user")
+      ? this.user.loginAs === "admin"
+      : false;
+    this.logedIn = this.storage.getItem("user") ? this.user.login : false;
   }
 
   logout() {
-    this.userDetails.logout();
-  }
-
-  checkLoginStatus(): boolean {
-    return (
-      this.userDetails.checkLocalStorage() && this.userDetails.getLoginStatus()
-    );
-  }
-
-  checkLoginAsAdmin(): boolean {
-    return (
-      this.userDetails.checkLocalStorage() &&
-      this.userDetails.getLoginAs() === "admin"
-    );
+    this.userService.logout();
   }
 }

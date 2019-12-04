@@ -1,24 +1,23 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Subject } from 'rxjs';
+import { Subject } from "rxjs";
 
 export interface NewsFeed {
   title: string;
   publishedAt: Date;
-  source: { id: string, name: string },
+  source: { id: string; name: string };
   content: string;
 }
-
 
 @Injectable({
   providedIn: "root"
 })
 export class NewsService {
   data: NewsFeed[] = [];
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   newsArticle: any;
-  
+
   updatedNews = new Subject<any>();
 
   updateNewsArticle(value) {
@@ -37,4 +36,3 @@ export class NewsService {
     });
   }
 }
-

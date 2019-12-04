@@ -11,7 +11,6 @@ import { NewsArticleGuard } from "./news-article.guard";
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
-  // { path: '', component: CommentsComponent },
   {
     path: "news-article",
     component: NewsArticleComponent,

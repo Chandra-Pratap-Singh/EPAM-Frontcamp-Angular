@@ -1,31 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { NewsService } from '../news.service';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { NewsService } from "../news.service";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-news-article',
-  templateUrl: './news-article.component.html',
-  styleUrls: ['./news-article.component.css']
+  selector: "app-news-article",
+  templateUrl: "./news-article.component.html",
+  styleUrls: ["./news-article.component.css"]
 })
 export class NewsArticleComponent implements OnInit {
-  readComments:boolean=false;
-  constructor( private newsService: NewsService, private router: Router ) {}
-  newsArticle:any;
+  readComments: boolean = false;
+  constructor(private newsService: NewsService, private router: Router) {}
+  newsArticle: any;
   ngOnInit() {
-    this.newsArticle=this.newsService.getNewsArticle();
+    this.newsArticle = this.newsService.getNewsArticle();
   }
-  
-  toggleComments(){
+
+  toggleComments() {
     this.readComments = !this.readComments;
   }
 
-  redirect(url){
-    // window.location.replace(url);
-    window.open(url,"_blank");
+  redirect(url) {
+    window.open(url, "_blank");
   }
 
-  goBack(){
-    this.router.navigateByUrl('news');
+  goBack() {
+    this.router.navigateByUrl("news");
   }
-
 }

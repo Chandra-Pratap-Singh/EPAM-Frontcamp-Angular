@@ -12,7 +12,7 @@ export class FilterPanelComponent implements OnInit {
   ngOnInit() {}
 
   // This function updates the filter keywords in the srvice
-  updateKeywords(value:string) {
+  updateKeywords(value: string) {
     this._channel.filter_keyword = value;
   }
 }

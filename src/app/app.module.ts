@@ -16,7 +16,6 @@ import { AddArticleSectionComponent } from "./add-article-section/add-article-se
 import { FooterComponent } from "./footer/footer.component";
 import { HttpClientModule } from "@angular/common/http";
 import { LoginComponent } from "./login/login.component";
-import { NewsDetailsComponent } from "./news-details/news-details.component";
 import { LoginguardGuard } from "./loginguard.guard";
 import { AdminGuard } from "./admin.guard";
 import { NewsArticleComponent } from "./news-article/news-article.component";
@@ -37,7 +36,6 @@ import { StorageServiceModule } from "angular-webstorage-service";
     AddArticleSectionComponent,
     FooterComponent,
     LoginComponent,
-    NewsDetailsComponent,
     NewsArticleComponent,
     CommentsComponent
   ],

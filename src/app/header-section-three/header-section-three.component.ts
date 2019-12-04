@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { UserService } from '../user.service';
+import { UserService } from "../user.service";
 
 @Component({
   selector: "app-header-section-three",
@@ -8,11 +8,11 @@ import { UserService } from '../user.service';
 })
 export class HeaderSectionThreeComponent implements OnInit {
   constructor(private userService: UserService) {}
-  user: {"loginAs":string ,"id":string,"login":boolean};
+  user: { loginAs: string; id: string; login: boolean };
   ngOnInit() {
-    this.user=this.userService.getUser();
+    this.user = this.userService.getUser();
   }
-  checkAccess(){
-    return this.userService.getLoginAs() ==="admin";
+  checkAccess() {
+    return this.userService.getLoginAs() === "admin";
   }
 }

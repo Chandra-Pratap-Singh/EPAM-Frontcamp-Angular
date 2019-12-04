@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ChannelService } from "../channel.service";
 import { NewsService } from "../news.service";
-import { Router } from '@angular/router';
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-news-section",
@@ -9,26 +9,26 @@ import { Router } from '@angular/router';
   styleUrls: ["./news-section.component.css"]
 })
 export class NewsSectionComponent implements OnInit {
-  readMore: Boolean;
-  data:any;
+  readMore: boolean;
+  data: any;
   constructor(
     private _channelService: ChannelService,
     private news: NewsService,
     private router: Router
   ) {
-    this.news.updatedNews.subscribe(value=>{
-      this.data=value;
-    })
-   }
+    this.news.updatedNews.subscribe(value => {
+      this.data = value;
+    });
+  }
 
   ngOnInit() {
     this.news.getLatestNews(this._channelService.all_channel.url);
     this.readMore = false;
-    this.data=this.news.data
+    this.data = this.news.data;
   }
 
   redirectToNewsSource = newsfeed => {
-    window.open(newsfeed.url, '_blank');
+    window.open(newsfeed.url, "_blank");
   };
 
   //This function filters news on the basis of filter keywords and selected channel
@@ -38,7 +38,7 @@ export class NewsSectionComponent implements OnInit {
 
   toggleShowMoreDisplay(value) {
     this.news.updateNewsArticle(value);
-    this.router.navigateByUrl('news-article');
+    this.router.navigateByUrl("news-article");
     // this.readMore = !this.readMore;
   }
 
@@ -47,5 +47,4 @@ export class NewsSectionComponent implements OnInit {
     if (value === null) return false;
     return true;
   }
-
 }

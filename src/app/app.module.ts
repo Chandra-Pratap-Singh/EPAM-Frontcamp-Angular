@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
 import { HeaderSectionOneComponent } from "./header-section-one/header-section-one.component";
@@ -9,13 +9,18 @@ import { HeaderSectionThreeComponent } from "./header-section-three/header-secti
 import { SourceListDropdownComponent } from "./source-list-dropdown/source-list-dropdown.component";
 import { FilterPanelComponent } from "./filter-panel/filter-panel.component";
 import { NewsSectionComponent } from "./news-section/news-section.component";
-import { ChannelService } from "./channel.service";
 import { AppRoutingModule } from "./app-routing.module";
 import { MainSectionComponent } from "./main-section/main-section.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { AddArticleSectionComponent } from "./add-article-section/add-article-section.component";
 import { FooterComponent } from "./footer/footer.component";
 import { HttpClientModule } from "@angular/common/http";
+import { LoginComponent } from "./login/login.component";
+import { LoginguardGuard } from "./loginguard.guard";
+import { AdminGuard } from "./admin.guard";
+import { NewsArticleComponent } from "./news-article/news-article.component";
+import { CommentsComponent } from "./comments/comments.component";
+import { StorageServiceModule } from "angular-webstorage-service";
 
 @NgModule({
   declarations: [
@@ -29,15 +34,20 @@ import { HttpClientModule } from "@angular/common/http";
     MainSectionComponent,
     PageNotFoundComponent,
     AddArticleSectionComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    NewsArticleComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    StorageServiceModule
   ],
-  providers: [ChannelService],
+  providers: [LoginguardGuard, AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

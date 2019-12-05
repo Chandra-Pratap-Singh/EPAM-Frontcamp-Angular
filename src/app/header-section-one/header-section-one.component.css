@@ -1,9 +1,15 @@
 .header-section-one {
   background-image: url("./assets/header-section-one-bg.jpg");
+  border-bottom: 2px solid navy;
 }
 .login-panel {
   float: right;
 }
 .btn {
   margin: 10px;
+  margin-bottom: 0px;
+}
+div,figure{
+  margin: 0px;
+  padding: 0px;
 }

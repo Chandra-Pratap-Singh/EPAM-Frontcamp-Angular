@@ -4,6 +4,7 @@
   id="filter-keyword"
   name="filter-keyword"
   placeholder="Type here Krywords to filter your News"
+  (keyup.enter)="updateKeywords(keywords.value)"
 />
 <button id="filter-button" (click)="updateKeywords(keywords.value)">
   Filter

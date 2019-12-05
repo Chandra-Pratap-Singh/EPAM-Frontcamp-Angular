@@ -1,0 +1,104 @@
+<div class="wrapper">
+  <div class="center-form">
+    <form class="card" #loginForm="ngForm" (ngSubmit)="login()">
+      <header>
+        Login Form
+      </header>
+      <section>
+        <table>
+          <tr>
+            <td>
+              Login as
+            </td>
+            <td>
+              <div class="custom-control custom-radio login-option">
+                <div class="admin-login">
+                  <input
+                    type="radio"
+                    class="custom-control-input"
+                    id="defaultUnchecked"
+                    name="login-as"
+                    value="admin"
+                    [(ngModel)]="loginDetails.loginAs"
+                    required
+                  />
+                  <label class="custom-control-label" for="defaultUnchecked"
+                    >Admin</label
+                  >
+                </div>
+                <div class="user-login">
+                  <input
+                    type="radio"
+                    class="custom-control-input"
+                    id="defaultChecked"
+                    name="login-as"
+                    value="user"
+                    checked
+                    [(ngModel)]="loginDetails.loginAs"
+                    required
+                  />
+                  <label class="custom-control-label" for="defaultChecked"
+                    >User</label
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr class="form-group">
+            <td>
+              <label
+                ><i class="material-icons" style="font-size:48px;color:navy"
+                  >person</i
+                ></label
+              >
+            </td>
+            <td>
+              <input
+                type="text"
+                #id="ngModel"
+                class="form-control"
+                name="id"
+                [class.is-invalid]="id.touched && id.invalid"
+                required
+                [(ngModel)]="loginDetails.id"
+              />
+            </td>
+          </tr>
+          <tr class="form-group">
+            <td>
+              <label
+                ><i class="material-icons" style="font-size:48px;color:navy"
+                  >vpn_key</i
+                ></label
+              >
+            </td>
+            <td>
+              <input
+                type="password"
+                #password="ngModel"
+                class="form-control"
+                name="password"
+                [class.is-invalid]="password.touched && password.invalid"
+                required
+                [(ngModel)]="loginDetails.password"
+              />
+            </td>
+          </tr>
+          <tr class="form-group">
+            <td></td>
+            <td>
+              <button
+                id="login-button"
+                type="submit"
+                class=" btn-lg"
+                *ngIf="loginForm.valid"
+              >
+                Submit
+              </button>
+            </td>
+          </tr>
+        </table>
+      </section>
+    </form>
+  </div>
+</div>

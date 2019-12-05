@@ -22,7 +22,7 @@ export class SourceListDropdownComponent implements OnInit {
   }
 
   //updates the service variable on selection of a channel
-  updateNews(event, channelName:string) {
+  updateNews(event, channelName: string) {
     this.channelService.activeChannel.next(channelName);
     this.newsService.getLatestNews(event.target.value);
   }
